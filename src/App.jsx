@@ -34,8 +34,6 @@ const INITIAL_STATE = {
     creativeKPI: 'Creative',
     rndKPI: 'Research & Development',
     ppicKPI: 'PPIC',
-    financeKPI: 'Finance',
-    gudangKPI: 'Gudang',
   },
   marketingKPI: [
     { kpi: 'Omzet Total', target: 'Rp 273,751,236', real: '', jenis: 'lagging', status: 'on' },
@@ -398,7 +396,7 @@ function App() {
     const currentlyOffTrack = [];
     const currentlyOnTrack = [];
 
-    ['marketingKPI', 'creativeKPI', 'rndKPI', 'ppicKPI', 'financeKPI', 'gudangKPI', 'rockReview'].forEach(key => {
+    ['marketingKPI', 'creativeKPI', 'rndKPI', 'ppicKPI', 'rockReview'].forEach(key => {
       if (data[key]) {
         data[key].forEach(item => {
           const text = item.kpi || item.rock;
@@ -644,8 +642,6 @@ function App() {
         { title: 'Creative', key: 'creativeKPI' },
         { title: 'Research & Development', key: 'rndKPI' },
         { title: 'PPIC', key: 'ppicKPI' },
-        { title: 'Finance', key: 'financeKPI' },
-        { title: 'Gudang', key: 'gudangKPI' },
       ].map((kpiCategory, index) => (
         <React.Fragment key={kpiCategory.key}>
           <section className={`slide ${currentSlide === (index + 2) ? 'active' : ''}`}>
@@ -674,7 +670,7 @@ function App() {
                     </tr>
                   </thead>
                   <tbody>
-                    {data[kpiCategory.key].map((item, i) => (
+                    {data[kpiCategory.key]?.map((item, i) => (
                       <tr key={i} className="group">
                         <td><Editable value={item.kpi} onChange={(val) => updateListItem(kpiCategory.key, i, 'kpi', val)} /></td>
                         <td><Editable value={item.target} onChange={(val) => updateListItem(kpiCategory.key, i, 'target', val)} /></td>
