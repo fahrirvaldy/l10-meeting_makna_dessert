@@ -71,22 +71,6 @@ const INITIAL_STATE = {
     { kpi: 'Proyek Produksi On-time', target: '>80% On-Time', real: '', jenis: 'lagging', status: 'on' },
     { kpi: 'Variansi Biaya vs Target FOB', target: '<+5% Biaya', real: '', jenis: 'lagging', status: 'on' },
   ],
-  financeKPI: [
-    { kpi: 'Laporan Kas Harian Tepat Waktu', target: '>90% Terlapor', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'Rekap Cashflow + Prioritas Bayar', target: '100% Terekap', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'Selisih Saldo Bank vs Catatan', target: '<1% Selisih Harian', real: '', jenis: 'lagging', status: 'on' },
-    { kpi: 'Proses Pengajuan hingga Cair', target: '<2 Hari Kerja', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'LPJ Lengkap', target: '<7 Hari', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'Porsi Pengeluaran di Luar Rencana', target: '<10% / Minggu', real: '', jenis: 'lagging', status: 'on' },
-  ],
-  gudangKPI: [
-    { kpi: 'Jumlah Pesanan Diproses', target: '100 Diproses', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'Pengiriman Tepat Waktu', target: '>95% Tepat Waktu', real: '', jenis: 'lagging', status: 'on' },
-    { kpi: 'Ketepatan Stok Barang', target: '>97% Sesuai', real: '', jenis: 'lagging', status: 'on' },
-    { kpi: 'Laporan Harian Retur, Gagal, Cancel', target: '100% Terlapor', real: '', jenis: 'leading', status: 'on' },
-    { kpi: 'Produktivitas Rata-Rata per Orang', target: '>80 Nota / Hari', real: '', jenis: 'lagging', status: 'on' },
-    { kpi: 'Total Lembur', target: 'Tercatat Jika Ada', real: '', jenis: 'lagging', status: 'on' },
-  ],
   rockReview: [
     { owner: 'Owner', rock: 'KPI On-Track & Kas Akhir 4M', status: 'on', note: '' },
     { owner: 'Marketing', rock: 'Target sales >-2M/bulan', status: 'on', note: '' },
