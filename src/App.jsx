@@ -427,14 +427,15 @@ function App() {
       };
     });
   };
+    // SESUDAH
+  const TOTAL_SLIDES = 11;
+
   const nextSlide = () => {
-    if (currentSlide < 12) setCurrentSlide(currentSlide + 1);
+    setCurrentSlide(s => Math.min(s + 1, TOTAL_SLIDES - 1));
   };
-
   const prevSlide = () => {
-    if (currentSlide > 0) setCurrentSlide(currentSlide - 1);
+    setCurrentSlide(s => Math.max(s - 1, 0));
   };
-
   // --- LOGIC CALCULATIONS ---
   const getRelevantRatings = () => {
     return data.attendances
@@ -697,7 +698,7 @@ function App() {
       ))}
 
       {/* --- SLIDE 8: ROCK REVIEW --- */}
-      <section className={`slide ${currentSlide === 8 ? 'active' : ''}`}>
+      <section className={`slide ${currentSlide === 6 ? 'active' : ''}`}>
         <div className="flex flex-col gap-1 mb-4">
           <h1>Rock Review</h1>
           <div className="subtitle">Prioritas 90 Hari</div>
@@ -744,7 +745,7 @@ function App() {
       </section>
 
       {/* --- SLIDE 9: HEADLINES --- */}
-      <section className={`slide ${currentSlide === 9 ? 'active' : ''}`}>
+      <section className={`slide ${currentSlide === 7 ? 'active' : ''}`}>
         <div className="flex flex-col gap-1 mb-4">
           <h1>Headlines</h1>
           <div className="subtitle">Berita Penting (Customer & Internal)</div>
@@ -816,7 +817,7 @@ function App() {
       </section>
 
       {/* --- SLIDE 10: TO-DO LIST --- */}
-      <section className={`slide ${currentSlide === 10 ? 'active' : ''}`}>
+      <section className={`slide ${currentSlide === 8 ? 'active' : ''}`}>
         <div className="flex flex-col gap-1 mb-4">
           <h1>To-Do List</h1>
           <div className="subtitle">Review minggu lalu & Action Plan</div>
@@ -847,7 +848,7 @@ function App() {
       </section>
 
       {/* --- SLIDE 11: IDS SESSION --- */}
-      <section className={`slide ${currentSlide === 11 ? 'active' : ''}`}>
+      <section className={`slide ${currentSlide === 9 ? 'active' : ''}`}>
         <div className="flex flex-col justify-between items-start gap-4 sm:flex-row sm:items-center mb-2">
           <div className="flex flex-col gap-1">
             <h1>IDS Session</h1>
@@ -922,7 +923,7 @@ function App() {
       </section>
 
       {/* --- SLIDE 12: CONCLUDING SEGMENT --- */}
-      <section className={`slide ${currentSlide === 12 ? 'active' : ''}`}>
+      <section className={`slide ${currentSlide === 10 ? 'active' : ''}`}>
         <div className="flex flex-col gap-1 mb-4">
           <h1>Segmen Akhir</h1>
           <div className="subtitle">Rating Rapat & Penutup (5 Menit)</div>
@@ -994,7 +995,7 @@ function App() {
             <i className="fa-solid fa-chevron-left text-xl"></i>
           </button>
           <div className="flex items-center justify-center px-4 border rounded-xl font-bold text-slate-400 bg-slate-50">
-            {currentSlide + 1} / 13
+            <span>{currentSlide + 1} / {TOTAL_SLIDES}</span>          
           </div>
           <button
             className="flex items-center justify-center w-14 h-14 rounded-full text-white bg-aksana-primary shadow-lg transition-all active:scale-90 hover:bg-aksana-primary/80"

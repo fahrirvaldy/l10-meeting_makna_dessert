@@ -98,9 +98,6 @@ const PdfComponent = React.forwardRef(({ data }, ref) => {
         {renderKpiTable(data?.scorecardTitles?.creativeKPI, data?.creativeKPI)}
         {renderKpiTable(data?.scorecardTitles?.rndKPI, data?.rndKPI)}
         {renderKpiTable(data?.scorecardTitles?.ppicKPI, data?.ppicKPI)}
-        {renderKpiTable(data?.scorecardTitles?.financeKPI, data?.financeKPI)}
-        {renderKpiTable(data?.scorecardTitles?.gudangKPI, data?.gudangKPI)}
-        {renderKpiTable(data?.scorecardTitles?.operasionalKPI, data?.operasionalKPI)}
       </div>
 
       {/* Rock Review */}
